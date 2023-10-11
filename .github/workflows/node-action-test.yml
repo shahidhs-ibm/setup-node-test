@@ -1,0 +1,18 @@
+name: node-action-test
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  node-action-test:
+    runs-on: ubuntu-22.04-ppc64le
+    steps:
+      - uses: actions/checkout@v3
+      - uses: adilhusain-s/setup-node@main
+        with:
+          node-version: 20
+      - run: |
+          npm --version
+          npm install
+          node -v
