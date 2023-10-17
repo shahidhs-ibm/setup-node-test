@@ -17,5 +17,4 @@ jobs:
           node-version: 18.4.0
       - run: |
           npm --version
-          npm install
           node -v
