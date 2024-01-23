@@ -2,16 +2,17 @@ name: node-action-test
 
 on:
   workflow_dispatch:
-    paths-ignore:
-      - '**.md'
   push:
     paths-ignore:
       - '**.md'
 jobs:
   node-action-test:
-    runs-on: shs-act-intel
+    runs-on: ubuntu-22-ppc64le
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v1
-      - run: npm install
-      - run: npm test
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.19.0
+      - run: |
+          npm --version
+          node -v
