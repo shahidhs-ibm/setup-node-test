@@ -9,12 +9,12 @@ on:
       - '**.md'
 jobs:
   node-action-test:
-    runs-on: ubuntu-20.04-ppc64le
+    runs-on: shs-act-intel
     steps:
       - uses: actions/checkout@v3
-      - uses: adilhusain-s/setup-node@ppc64le
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18.4.0
+          node-version: 18
       - run: |
           npm --version
           node -v
