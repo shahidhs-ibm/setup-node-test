@@ -13,8 +13,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.19.0
-        env:
-          RUNNER_TOOL_CACHE: /opt/hostedtoolcache
+          architecture: 'ppc64le'
       - run: |
           npm --version
           node -v
